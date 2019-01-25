@@ -10,10 +10,20 @@ public class SceneManager : MonoBehaviour
 
     private SceneState currentSceneState;
 
+    public GameObject sceneCamera;
+
     public List<GameObject> roomList = new List<GameObject>();
+
+    public GameObject fadeQuadPrefab;
+    public GameObject fadeQuad;
 
     public GameObject currentRoom;
     public GameObject nextRoom; //switch to this on solve
+
+
+
+
+    private bool isFading = false;
 
 
     public void Start() {
@@ -24,6 +34,25 @@ public class SceneManager : MonoBehaviour
         
         if(Input.GetKeyUp(KeyCode.Space)) {
             SwitchScene();
+        }
+
+
+        if(isFading) {
+
+            
+            if(fadeQuad == null) {
+                fadeQuad = Instantiate(fadeQuadPrefab, new Vector3(sceneCamera.transform.position.x, sceneCamera.transform.position.y - 1, sceneCamera.transform.position.z + 1), Quaternion.identity);
+            }
+
+
+            Material fadeQuadMaterial = fadeQuad.GetComponent<Renderer>().materials[2];
+            fadeQuad.transform.rotation = sceneCamera.transform.rotation;
+
+            Color color = fadeQuadMaterial.color;
+            color.a = Mathf.Sin(Time.time / 2) * Mathf.Cos(Time.time / 4) * 2;
+            fadeQuadMaterial.color = color;
+
+
         }
 
     }
@@ -41,7 +70,8 @@ public class SceneManager : MonoBehaviour
 
 
             currentSceneState = nextRoom.GetComponent<SceneState>();
-            StartCoroutine("RoomTransition");
+            //StartCoroutine("RoomTransition");
+            isFading = true;
             
 
         } else {
@@ -54,17 +84,7 @@ public class SceneManager : MonoBehaviour
     }
 
     IEnumerator RoomTransition() {
-
-
-        yield return new WaitForSeconds(1f);
-        Debug.Log("Transition");
-        for(float i = 0; i < 1f; i+=0.01f) {
-
-
-            currentRoom.transform.rotation = new Quaternion(currentRoom.transform.rotation.x + Mathf.Sin(i * 10) * 2, currentRoom.transform.rotation.y, currentRoom.transform.rotation.z, currentRoom.transform.rotation.w);
-
-            yield return new WaitForSeconds(0.05f);
-        }
+        yield return new WaitForSeconds(0f);
         //Instantiate(nextRoom, roomPosition, Quaternion.identity);
 
     }
