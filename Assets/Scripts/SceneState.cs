@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class SceneState : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<GameObject> objects = new List<GameObject>();
+    public GameObject character;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+
+
 }
