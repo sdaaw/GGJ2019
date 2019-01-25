@@ -7,8 +7,4 @@ public class SceneState : MonoBehaviour
     public List<GameObject> objects = new List<GameObject>();
     public GameObject character;
 
-
-
-
-
 }
