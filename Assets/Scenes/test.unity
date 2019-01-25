@@ -710,6 +710,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d2f4d836d0c45b040875ef9cad18a60e,
         type: 3}
+    - target: {fileID: 1145310797709867940, guid: d1b3d33e123fa7b4f9077b3756ddb41f,
+        type: 3}
+      propertyPath: canBePickedUp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145310797709867943, guid: d1b3d33e123fa7b4f9077b3756ddb41f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949771083989919726, guid: d1b3d33e123fa7b4f9077b3756ddb41f,
+        type: 3}
+      propertyPath: m_Name
+      value: logic
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336726127274950012, guid: d1b3d33e123fa7b4f9077b3756ddb41f,
+        type: 3}
+      propertyPath: canBePickedUp
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1b3d33e123fa7b4f9077b3756ddb41f, type: 3}
 --- !u!1001 &1145434193722541313

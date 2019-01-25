@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject pickedUpImg;
+    public GameObject pickedUpImg;
 
     public static GameManager GM;
 
@@ -15,7 +14,7 @@ public class GameManager : MonoBehaviour
         GM = this;
     }
 
-    public void ShowPickedImg(Sprite sp)
+    public void ShowPickupImg(Sprite sp)
     {
         pickedUpImg.GetComponent<Image>().sprite = sp;
         StartCoroutine(showImg());
@@ -27,5 +26,16 @@ public class GameManager : MonoBehaviour
         pickedUpImg.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         pickedUpImg.gameObject.SetActive(false);
+    }
+
+    public void ShowInteractImg(Sprite sp)
+    {
+        pickedUpImg.GetComponent<Image>().sprite = sp;
+
+        if (pickedUpImg.gameObject.activeSelf)
+            pickedUpImg.gameObject.SetActive(false);
+        else
+            pickedUpImg.gameObject.SetActive(true);
+        
     }
 }
