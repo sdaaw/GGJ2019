@@ -15,10 +15,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask m_layerMask;
 
+    [SerializeField]
+    private List<GameObject> players = new List<GameObject>();
+
     public float turnSpeed;
 
     [SerializeField]
     private GameObject moodIcon;
+
+    public void SetCharacter(int id)
+    {
+        for(int i = 0; i < players.Count; i++)
+        {
+            if (i == id)
+                players[i].SetActive(true);
+            else
+                players[i].SetActive(false);
+        }
+    }
 
     void Awake()
     {

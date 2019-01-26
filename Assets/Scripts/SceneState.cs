@@ -21,9 +21,13 @@ public class SceneState : MonoBehaviour
     public int door1TravelId;
     public int door2TravelId;
 
+    private PlayerController m_player;
+
 
     private void Start()
-    {   
+    {
+
+        m_player = FindObjectOfType<PlayerController>();
 
 
 

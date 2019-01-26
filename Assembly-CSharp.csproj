@@ -60,13 +60,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Ps1\Assets\rotate.cs" />
+    <Compile Include="Assets\Ps1\Assets\Shaders\Billboard\billboard.cs" />
+    <Compile Include="Assets\Ps1\Assets\Shaders\imageEffects\cPrecision.cs" />
     <Compile Include="Assets\Scripts\DoorTrigger.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\SceneState.cs" />
+    <None Include="Assets\Ps1\Assets\Shaders\psx-unlit.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\psx-unlit_noambient.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Reflective\psx-unlit-mult.shader" />
     <None Include="Assets\InnerGlowShader.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Trasparent\psx-trasparent-unlit-noambient.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Trasparent\psx-trasparent-unlit.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Resources\cPrecision.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Reflective\psx-unlit-add.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Reflective\psx-vertexlit-mult.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Reflective\psx-unlit_noambient-mult.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\psx-vertexlit.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Reflective\psx-unlit_noambient-add.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Reflective\psx-vertexlit-add.shader" />
+    <None Include="Assets\Ps1\Assets\Shaders\Trasparent\psx-trasparent-vertexlit.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/projects/GGJ2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
