@@ -9,9 +9,18 @@ public class GameManager : MonoBehaviour
 
     public static GameManager GM;
 
+    private PlayerController m_pc;
+
     private void Awake()
     {
         GM = this;
+        m_pc = FindObjectOfType<PlayerController>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+            m_pc.DisplayMood();
     }
 
     public void ShowPickupImg(Sprite sp)

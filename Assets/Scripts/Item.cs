@@ -25,12 +25,6 @@ public class Item : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && canBeInteractedWith)
-            InteractWithItem();
-    }
-
     private void OnTriggerExit(Collider other)
     {
         //TODO: oskari.lopetaVälkkyminen();

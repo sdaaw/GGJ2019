@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private LayerMask m_layerMask;
 
     public float turnSpeed;
+
+    [SerializeField]
+    private GameObject moodIcon;
 
     void Awake()
     {
@@ -35,31 +39,22 @@ public class PlayerController : MonoBehaviour
         m_rigidbody.velocity = Vector3.zero;
         Vector3 dist = m_moveDirection;
 
-        /*RaycastHit ray;
-        if (Physics.SphereCast(m_transform.position, .5f, Vector3.down, out ray, .5f, m_layerMask))
-            m_isGrounded = true;
-        else
-            m_isGrounded = false;
-
-        if (Input.GetKeyDown(KeyCode.Space) && m_isGrounded)
-        {
-            m_yVelocity = m_jumpSpeed;
-        }
-        if (m_isGrounded && m_yVelocity < 0)
-        {
-            m_yVelocity = -0.1f;
-        }
-        else
-        {
-            m_yVelocity += Physics.gravity.y * m_fallingSpeed * Time.deltaTime;
-        }
-
-        dist.y = m_yVelocity * Time.deltaTime;*/
-
         m_moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         m_moveDirection = m_transform.TransformDirection(m_moveDirection);
         m_moveDirection *= speed;
 
         m_rigidbody.velocity = dist;
+    }
+
+    public void DisplayMood()
+    {
+        StartCoroutine(ShowMood());
+    }
+
+    private IEnumerator ShowMood()
+    {
+        moodIcon.SetActive(true);
+        yield return new WaitForSeconds(2);
+        moodIcon.SetActive(false);
     }
 }
