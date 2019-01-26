@@ -13,6 +13,8 @@ public class BezierSpawner : MonoBehaviour
     public int spawnRate = 100000;
     public int timer = 0;
 
+    public bool isActive = false;
+
     public int spawnRadius = 5;
 
     public GameObject bezierCube;
@@ -21,31 +23,36 @@ public class BezierSpawner : MonoBehaviour
     {
         //StartCoroutine(spawnCube(0, 0, 0, Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10)));
 
-        
+        StartCoroutine(ActivateBezier());
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        timer++;
-        if(timer > spawnRate) {
-            StartCoroutine(spawnCube(transform.position.x + Random.Range(-spawnRadius, spawnRadius),
-                transform.position.y,
-                transform.position.z + Random.Range(-spawnRadius, spawnRadius),
-                transform.position.x + Random.Range(-5, 5),
-                transform.position.y,
-                transform.position.z + Random.Range(-5, 5),
-                transform.position.x + Random.Range(-5, 5),
-                transform.position.y,
-                transform.position.z + Random.Range(-5, 5),
-                transform.position.x + Random.Range(-spawnRadius, spawnRadius),
-                transform.position.y + 5,
-                transform.position.z + Random.Range(-spawnRadius, spawnRadius)));
-
-            timer = 0;
-
+        if(isActive) {
+            if (timer > spawnRate) {
+                StartCoroutine(spawnCube(transform.position.x + Random.Range(-spawnRadius, spawnRadius),
+                    transform.position.y,
+                    transform.position.z + Random.Range(-spawnRadius, spawnRadius),
+                    transform.position.x + Random.Range(-5, 5),
+                    transform.position.y,
+                    transform.position.z + Random.Range(-5, 5),
+                    transform.position.x + Random.Range(-5, 5),
+                    transform.position.y,
+                    transform.position.z + Random.Range(-5, 5),
+                    transform.position.x + Random.Range(-spawnRadius, spawnRadius),
+                    transform.position.y + 2.5f,
+                    transform.position.z + Random.Range(-spawnRadius, spawnRadius)));
+                timer = 0;
+            }
+            timer++;
         }
         
+    }
+
+    IEnumerator ActivateBezier() {
+        yield return new WaitForSeconds(3f);
+        isActive = true;
     }
 
 
@@ -80,7 +87,7 @@ public class BezierSpawner : MonoBehaviour
             yc = getPt2(y2, y3, y3, i);
             zc = getPt2(z2, z3, z3, i);
             finalPoint = new Vector3(getPt2(xa, xb, xc, i), getPt2(ya, yb, yc, i), getPt2(za, zb, zc, i));
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.03f);
             a = Instantiate(bezierCube, finalPoint, Random.rotation);
             //a.transform.parent = bezierCube.transform;
             index++;
