@@ -32,7 +32,7 @@ public class Item : MonoBehaviour {
     }
     public void FixedUpdate() {
         if(isGlowing) {
-            myMat.SetFloat("_RimPower", Mathf.Sin(Time.time * 2) * 6);
+            myMat.SetFloat("_RimPower", Mathf.Sin(Time.time * 2) + 1);
         } else {
             myMat.SetFloat("_RimPower", 0f);
         }
