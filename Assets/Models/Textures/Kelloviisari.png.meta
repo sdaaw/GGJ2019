@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models/Textures/Kelloviisari.png.meta
 guid: f4fd2659c69679945a38c7e8cabc6a41
+=======
+guid: 239b17ec5954bae4f892ff58683784cd
+>>>>>>> 092ed36a315b4294724ec458c341ce034fd3adfb:Assets/Models/Textures/Kelloviisari.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
