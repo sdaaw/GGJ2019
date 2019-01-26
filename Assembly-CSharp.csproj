@@ -68,6 +68,8 @@
     <Compile Include="Assets\Ps1\Assets\rotate.cs" />
     <Compile Include="Assets\Ps1\Assets\Shaders\Billboard\billboard.cs" />
     <Compile Include="Assets\Ps1\Assets\Shaders\imageEffects\cPrecision.cs" />
+    <Compile Include="Assets\Scripts\BezierCubeBehaviour.cs" />
+    <Compile Include="Assets\Scripts\BezierSpawner.cs" />
     <Compile Include="Assets\Scripts\DoorTrigger.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
