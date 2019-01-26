@@ -9,8 +9,12 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     private Rigidbody m_rigidbody;
-    private Vector3 m_moveDirection = Vector3.zero;
+    private Vector3 m_moveVector;
+    private Vector3 m_xMoveVector;
     private Transform m_transform;
+
+    [SerializeField]
+    private Camera m_playerCamera;
 
     [SerializeField]
     private LayerMask m_layerMask;
@@ -20,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     public float turnSpeed;
 
+    private Animator animator;
+
     [SerializeField]
     private GameObject moodIcon;
 
@@ -28,7 +34,10 @@ public class PlayerController : MonoBehaviour
         for(int i = 0; i < players.Count; i++)
         {
             if (i == id)
+            {
                 players[i].SetActive(true);
+                animator = players[i].GetComponent<Animator>();
+            }  
             else
                 players[i].SetActive(false);
         }
@@ -44,6 +53,10 @@ public class PlayerController : MonoBehaviour
     {
         if (AllowMovement)
             DoMovement();
+        animator.SetFloat("speed", m_rigidbody.velocity.magnitude);
+        Debug.Log(m_rigidbody.velocity.magnitude);
+        if (moodIcon != null)
+            moodIcon.transform.LookAt(m_playerCamera.transform);
     }
     /// <summary>
     /// Do player movement
@@ -51,13 +64,19 @@ public class PlayerController : MonoBehaviour
     void DoMovement()
     {
         m_rigidbody.velocity = Vector3.zero;
-        Vector3 dist = m_moveDirection;
+        m_moveVector = m_xMoveVector;
 
-        m_moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        m_moveDirection = m_transform.TransformDirection(m_moveDirection);
-        m_moveDirection *= speed;
+        m_xMoveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+     
+        m_xMoveVector = GetVectorRelativeToObject(m_xMoveVector, m_playerCamera.transform);
 
-        m_rigidbody.velocity = dist;
+        if (m_xMoveVector.magnitude > 0)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(m_xMoveVector, Vector3.up);
+            m_transform.rotation = Quaternion.Slerp(m_transform.rotation, targetRotation, 0.2f);
+        }
+
+        m_rigidbody.velocity = m_moveVector * speed;
     }
 
     public void DisplayMood()
@@ -70,5 +89,25 @@ public class PlayerController : MonoBehaviour
         moodIcon.SetActive(true);
         yield return new WaitForSeconds(2);
         moodIcon.SetActive(false);
+    }
+
+    public static Vector3 GetVectorRelativeToObject(Vector3 inputVector, Transform camera)
+    {
+        Vector3 objectRelativeVector = Vector3.zero;
+        if (inputVector != Vector3.zero)
+        {
+            Vector3 forward = camera.TransformDirection(Vector3.forward);
+            forward.y = 0f;
+            forward.Normalize();
+            Vector3 right = new Vector3(forward.z, 0.0f, -forward.x);
+
+            Vector3 relativeRight = inputVector.x * right;
+            Vector3 relativeForward = inputVector.z * forward;
+
+            objectRelativeVector = relativeRight + relativeForward;
+
+            if (objectRelativeVector.magnitude > 1f) objectRelativeVector.Normalize();
+        }
+        return objectRelativeVector;
     }
 }

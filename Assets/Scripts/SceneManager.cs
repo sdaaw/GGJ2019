@@ -21,14 +21,13 @@ public class SceneManager : MonoBehaviour
 
 
     public GameObject currentRoom;
-   // public GameObject nextRoom; //switch to this on solve
+    // public GameObject nextRoom; //switch to this on solve
 
 
     public void Start() {
         currentSceneState = roomList[0];
         currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.Euler(roomRotation));
         FindObjectOfType<PlayerController>().SetCharacter(currentSceneState.characterId);
-
     }
 
     public void Update() {

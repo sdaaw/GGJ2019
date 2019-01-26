@@ -31,7 +31,6 @@ public class SceneState : MonoBehaviour
 
 
 
-
         if(objects.Count > 0) {
 
             foreach(Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa o in objects) {
