@@ -23,11 +23,6 @@ public class SceneManager : MonoBehaviour
     public GameObject nextRoom; //switch to this on solve
 
 
-
-
-    private bool isFading = false;
-
-
     public void Start() {
         currentSceneState = currentRoom.GetComponent<SceneState>();
     }
@@ -71,6 +66,8 @@ public class SceneManager : MonoBehaviour
             fadeImage.color = new Color(0, 0, 0, i);
             yield return new WaitForSeconds(0.01f);
         }
+
+        //set new room here?
 
 
         for (float i = 1f; i >= 0f; i -= 0.01f) {
