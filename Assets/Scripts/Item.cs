@@ -53,12 +53,11 @@ public class Item : MonoBehaviour {
     }
 
     public void InteractWithItem() {
-        //TODO:
-        //gamemanager.hasItem = true;
-        //gamemanager.item = this;
-
-        if (canBePickedUp) {
+        if (canBePickedUp && !GameManager.GM.hasItem) {
             GameManager.GM.ShowPickupImg(interactImg);
+            GameManager.GM.hasItem = true;
+            GameManager.GM.currentItem = this;
+
             Destroy(gameObject.transform.root.gameObject);
         } else {
             GameManager.GM.ShowInteractImg(interactImg);
