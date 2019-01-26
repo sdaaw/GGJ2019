@@ -27,7 +27,11 @@ public class SceneManager : MonoBehaviour
     public void Start() {
         currentSceneState = roomList[0];
         currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.Euler(roomRotation));
-        FindObjectOfType<PlayerController>().SetCharacter(currentSceneState.characterId);
+        PlayerController pc = FindObjectOfType<PlayerController>();
+        pc.SetCharacter(currentSceneState.characterId);
+        Vector3 doorPos = currentRoom.GetComponent<SceneState>().transform.GetChild(0).transform.position;
+        pc.transform.position = new Vector3(doorPos.x + 0.5f, pc.transform.position.y, doorPos.z - 2);
+        pc.transform.LookAt(sceneCamera.transform);
     }
 
     public void Update() {
