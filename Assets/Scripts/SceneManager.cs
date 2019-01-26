@@ -30,23 +30,25 @@ public class SceneManager : MonoBehaviour
     public void Update() {
         
         if(Input.GetKeyUp(KeyCode.Space)) {
-            SwitchScene();
+            //SwitchScene();
         }
 
     }
 
 
-    public void SwitchScene() {
+    public void SwitchScene(int doorId) {
 
 
         if(currentSceneState.isSolved) {
 
-
-            Debug.Log("SWITCHED SOLVED SCENE");
-
-            StartCoroutine("RoomTransition");
-            //switch room logic here ?? joo
-
+            if (doorId == 1)
+            {
+                currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
+            }
+            else if (doorId == 2)
+            {
+                currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
+            }
 
             //currentSceneState = nextRoom.GetComponent<SceneState>();
 
@@ -54,9 +56,7 @@ public class SceneManager : MonoBehaviour
             //disable player
             //fade and load new scene
 
-            //currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
-            //currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
-
+            StartCoroutine("RoomTransition");
 
         } else {
 
@@ -83,15 +83,17 @@ public class SceneManager : MonoBehaviour
         }
 
         //set new room here?
-
+        Destroy(currentRoom);
+        currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.identity);
+        
+        //change playermodel and place it to start position
 
         for (float i = 1f; i >= 0f; i -= 0.01f) {
             fadeImage.color = new Color(0, 0, 0, i);
             yield return new WaitForSeconds(0.01f);
         }
 
-
-        //Instantiate(nextRoom, roomPosition, Quaternion.identity);
+        //currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.identity);
 
     }
 
