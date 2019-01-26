@@ -54,7 +54,11 @@ public class SceneManager : MonoBehaviour
 
         } else {
 
-            Debug.Log("SWITCHED UNSOLVED SCENE");
+            if(currentSceneState.sceneId != 0) {
+                StartCoroutine(RoomTransition(currentSceneState.sceneId - 1)); //or go to same sceneid
+            
+                Debug.Log("SWITCHED UNSOLVED SCENE");
+            }
 
         }
 
