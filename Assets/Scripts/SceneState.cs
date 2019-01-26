@@ -14,6 +14,9 @@ public class SceneState : MonoBehaviour
     //public List<GameObject> objects = new List<GameObject>();
     public GameObject scenePrefab;
 
+    public int door1TravelId;
+    public int door2TravelId;
+
 
     private void Start()
     {

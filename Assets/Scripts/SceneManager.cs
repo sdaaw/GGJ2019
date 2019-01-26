@@ -15,12 +15,12 @@ public class SceneManager : MonoBehaviour
 
     public GameObject sceneCamera;
 
-    public List<GameObject> roomList = new List<GameObject>();
+    public List<SceneState> roomList = new List<SceneState>();
 
 
 
     public GameObject currentRoom;
-    public GameObject nextRoom; //switch to this on solve
+   // public GameObject nextRoom; //switch to this on solve
 
 
     public void Start() {
@@ -48,8 +48,15 @@ public class SceneManager : MonoBehaviour
             //switch room logic here ?? joo
 
 
-            currentSceneState = nextRoom.GetComponent<SceneState>();
-            
+            //currentSceneState = nextRoom.GetComponent<SceneState>();
+
+            //go to next scene based on door we enter
+            //disable player
+            //fade and load new scene
+
+            //currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
+            //currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
+
 
         } else {
 
@@ -58,6 +65,14 @@ public class SceneManager : MonoBehaviour
         }
 
 
+    }
+
+    public SceneState getStateWithId(int id)
+    {
+        for (int i = 0; i < roomList.Count; i++)
+            if (id == roomList[i].cID)
+                return roomList[i];
+        return null;
     }
 
     IEnumerator RoomTransition() {
