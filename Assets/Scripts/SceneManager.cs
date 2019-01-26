@@ -10,6 +10,7 @@ public class SceneManager : MonoBehaviour
     public Image fadeImage;
 
     public Vector3 roomPosition = new Vector3(0, 0, 0);
+    public Vector3 roomRotation = new Vector3(0, 0, 0);
 
     private SceneState currentSceneState;
 
@@ -24,7 +25,9 @@ public class SceneManager : MonoBehaviour
 
 
     public void Start() {
-        currentSceneState = currentRoom.GetComponent<SceneState>();
+        currentSceneState = roomList[0];
+        currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.Euler(roomRotation));
+
     }
 
     public void Update() {
@@ -41,6 +44,8 @@ public class SceneManager : MonoBehaviour
 
         if(currentSceneState.isSolved) {
 
+            Destroy(currentRoom);
+
             if (doorId == 1)
             {
                 currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
@@ -49,6 +54,8 @@ public class SceneManager : MonoBehaviour
             {
                 currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
             }
+
+            
 
             //currentSceneState = nextRoom.GetComponent<SceneState>();
 
@@ -83,9 +90,9 @@ public class SceneManager : MonoBehaviour
         }
 
         //set new room here?
-        Destroy(currentRoom);
-        currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.identity);
         
+        currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.Euler(roomRotation));
+
         //change playermodel and place it to start position
 
         for (float i = 1f; i >= 0f; i -= 0.01f) {

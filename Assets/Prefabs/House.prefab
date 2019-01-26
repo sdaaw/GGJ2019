@@ -128,8 +128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8d393710aa53b44aceceed72c7dba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cID: 0
+  sceneId: 0
+  cID: 2
   isSolved: 1
+  scenePrefab: {fileID: 0}
+  door1TravelId: 1
+  door2TravelId: 1
 --- !u!65 &7883861930620894210
 BoxCollider:
   m_ObjectHideFlags: 0
