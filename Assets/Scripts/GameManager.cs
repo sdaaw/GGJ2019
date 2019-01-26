@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            m_pc.DisplayMood();
+        /*if (Input.GetKeyDown(KeyCode.E))
+            m_pc.DisplayMood();*/
     }
 
     public void ShowPickupImg(Sprite sp)

@@ -20,14 +20,10 @@ public class Item : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        //TODO: oskarin välkkyminen
-        //oskari.välky();
-        //TODO: tell player to pick up item
         if (other.GetComponent<PlayerController>()) {
             isGlowing = true;
             Debug.Log("Interact with " + gameObject.transform.root.name);
-            //PickUpImg();
-            canBeInteractedWith = true;
+            canBeInteractedWith = true; 
         }
     }
     public void FixedUpdate() {
@@ -36,10 +32,12 @@ public class Item : MonoBehaviour {
         } else {
             myMat.SetFloat("_RimPower", 0f);
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+            InteractWithItem();
     }
 
     private void OnTriggerExit(Collider other) {
-        //TODO: oskari.lopetaVälkkyminen();
         isGlowing = false;
         if(other.GetComponent<PlayerController>()) {
             isGlowing = false;
