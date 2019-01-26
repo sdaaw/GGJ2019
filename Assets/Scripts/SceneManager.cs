@@ -92,8 +92,12 @@ public class SceneManager : MonoBehaviour
             currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
         }
 
-        FindObjectOfType<PlayerController>().SetCharacter(currentSceneState.characterId);
-        //TODO: Set position outside of door
+        PlayerController pc = FindObjectOfType<PlayerController>();
+        pc.SetCharacter(currentSceneState.characterId);
+        Vector3 doorPos = currentRoom.GetComponent<SceneState>().transform.GetChild(0).transform.position;
+
+        pc.transform.position = new Vector3(doorPos.x + 0.5f, pc.transform.position.y, doorPos.z - 2);
+        pc.transform.LookAt(sceneCamera.transform);
 
         currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.Euler(roomRotation));
 

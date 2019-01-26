@@ -69,9 +69,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8d393710aa53b44aceceed72c7dba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterId: 0
+  characterId: 1
   sceneId: 3
   isSolved: 1
+  prefabObjects: []
+  objects: []
   scenePrefab: {fileID: 0}
   door1TravelId: 4
   door2TravelId: 4
@@ -2395,7 +2397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4123218951388018739
 Transform:
   m_ObjectHideFlags: 0
@@ -2500,7 +2502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5020962786194150347
 Transform:
   m_ObjectHideFlags: 0
