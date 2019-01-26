@@ -13,9 +13,6 @@ public class GameManager : MonoBehaviour
 
     public int currentScene;
 
-    public bool hasItem;
-    public Item currentItem;
-
     private void Awake()
     {
         GM = this;

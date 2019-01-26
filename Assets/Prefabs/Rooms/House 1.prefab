@@ -2581,6 +2581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterId: 0
+  heldItemOnEntry: {fileID: 3407515410062601347, guid: d1b3d33e123fa7b4f9077b3756ddb41f,
+    type: 3}
   sceneId: 1
   isSolved: 1
   prefabObjects: []
@@ -2588,3 +2590,4 @@ MonoBehaviour:
   scenePrefab: {fileID: 0}
   door1TravelId: 2
   door2TravelId: 2
+  moodImg: {fileID: 21300000, guid: 2372da7a9b823e444be2d7120043a6f9, type: 3}

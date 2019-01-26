@@ -16,7 +16,7 @@ public class Item : MonoBehaviour {
 
 
     public void Start() {
-        myMat = gameObject.transform.root.GetComponent<Renderer>().material;
+        myMat = gameObject.transform.GetChild(0).GetComponent<Renderer>().material;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -51,12 +51,11 @@ public class Item : MonoBehaviour {
     }
 
     public void InteractWithItem() {
-        if (canBePickedUp && !GameManager.GM.hasItem) {
+        if (canBePickedUp && !FindObjectOfType<PlayerController>()) {
             GameManager.GM.ShowPickupImg(interactImg);
-            GameManager.GM.hasItem = true;
-            GameManager.GM.currentItem = this;
-
-            Destroy(gameObject.transform.root.gameObject);
+            FindObjectOfType<PlayerController>().PutItemToHand(this);
+            //gameObject.transform.parent = 
+            //Destroy(gameObject.transform.root.gameObject);
         } else {
             GameManager.GM.ShowInteractImg(interactImg);
         }

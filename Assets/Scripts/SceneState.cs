@@ -7,6 +7,10 @@ public class SceneState : MonoBehaviour
     //index?
     public int characterId;
 
+    public Item heldItemOnEntry;
+
+    private GameObject helditemInScene;
+
     //which character is playing
     public int sceneId;
     public bool isSolved = false;
@@ -23,13 +27,24 @@ public class SceneState : MonoBehaviour
 
     private PlayerController m_player;
 
+    public Sprite moodImg;
+
 
     private void Start()
     {
-
         m_player = FindObjectOfType<PlayerController>();
 
+        if(moodImg != null)
+        {
+            m_player.DisplayMood(moodImg);
+        }
 
+        //add item to player
+        if(heldItemOnEntry != null)
+        {
+            helditemInScene = Instantiate(heldItemOnEntry.gameObject, Vector3.zero, Quaternion.identity);
+            m_player.PutItemToHand(helditemInScene.GetComponent<Item>());
+        }
 
         if(objects.Count > 0) {
 

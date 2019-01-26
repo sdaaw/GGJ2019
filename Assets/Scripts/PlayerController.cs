@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private List<GameObject> players = new List<GameObject>();
 
+    [SerializeField]
+    private List<GameObject> m_rightHands = new List<GameObject>();
+
+    private GameObject cRightHand;
+
     public float turnSpeed;
 
     private Animator animator;
@@ -29,14 +34,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject moodIcon;
 
+    public bool hasItem;
+    public Item currentItem;
+
     public void SetCharacter(int id)
     {
         for(int i = 0; i < players.Count; i++)
         {
             if (i == id)
             {
+                if (cRightHand != null && cRightHand.transform.GetChild(0))
+                {
+                    Transform f = cRightHand.transform.GetChild(0);
+                    f.parent = null;
+                    Destroy(f.gameObject);
+                }
+                    
                 players[i].SetActive(true);
                 animator = players[i].GetComponent<Animator>();
+                cRightHand = m_rightHands[i];
+                
             }  
             else
                 players[i].SetActive(false);
@@ -79,8 +96,9 @@ public class PlayerController : MonoBehaviour
         m_rigidbody.velocity = m_moveVector * speed;
     }
 
-    public void DisplayMood()
+    public void DisplayMood(Sprite img)
     {
+        moodIcon.GetComponentInChildren<Image>().sprite = img;
         StartCoroutine(ShowMood());
     }
 
@@ -89,6 +107,19 @@ public class PlayerController : MonoBehaviour
         moodIcon.SetActive(true);
         yield return new WaitForSeconds(2);
         moodIcon.SetActive(false);
+    }
+
+    public void PutItemToHand(Item item)
+    {
+        if(!hasItem)
+        {
+            Destroy(item.gameObject.transform.root.GetComponentInChildren<Rigidbody>());
+            item.gameObject.transform.root.position = cRightHand.transform.position;
+            //TODO: rotate
+            item.gameObject.transform.root.parent = cRightHand.transform;
+            hasItem = true;
+            currentItem = item;
+        }
     }
 
     public static Vector3 GetVectorRelativeToObject(Vector3 inputVector, Transform camera)
