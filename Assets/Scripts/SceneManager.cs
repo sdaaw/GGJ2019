@@ -44,26 +44,13 @@ public class SceneManager : MonoBehaviour
 
         if(currentSceneState.isSolved) {
 
-            Destroy(currentRoom);
-
-            if (doorId == 1)
-            {
-                currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
-            }
-            else if (doorId == 2)
-            {
-                currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
-            }
-
-            
-
             //currentSceneState = nextRoom.GetComponent<SceneState>();
 
             //go to next scene based on door we enter
             //disable player
             //fade and load new scene
 
-            StartCoroutine("RoomTransition");
+            StartCoroutine(RoomTransition(doorId));
 
         } else {
 
@@ -77,12 +64,12 @@ public class SceneManager : MonoBehaviour
     public SceneState getStateWithId(int id)
     {
         for (int i = 0; i < roomList.Count; i++)
-            if (id == roomList[i].cID)
+            if (id == roomList[i].sceneId)
                 return roomList[i];
         return null;
     }
 
-    IEnumerator RoomTransition() {
+    IEnumerator RoomTransition(int id) {
 
         for(float i = 0; i < 1f; i += 0.01f) {
             fadeImage.color = new Color(0, 0, 0, i);
@@ -90,7 +77,18 @@ public class SceneManager : MonoBehaviour
         }
 
         //set new room here?
-        
+        Destroy(currentRoom);
+
+        if (id == 1)
+        {
+            currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
+        }
+        else if (id == 2)
+        {
+            currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
+        }
+
+
         currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.Euler(roomRotation));
 
         //change playermodel and place it to start position

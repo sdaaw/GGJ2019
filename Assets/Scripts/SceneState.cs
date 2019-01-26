@@ -5,10 +5,10 @@ using UnityEngine;
 public class SceneState : MonoBehaviour
 {
     //index?
-    public int sceneId;
+    public int characterId;
 
     //which character is playing
-    public int cID;
+    public int sceneId;
     public bool isSolved = false;
 
     //public List<GameObject> objects = new List<GameObject>();
