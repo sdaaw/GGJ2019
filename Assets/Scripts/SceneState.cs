@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneState : MonoBehaviour
-{
+public class SceneState : MonoBehaviour {
     //index?
     public int characterId;
 
     //which character is playing
     public int sceneId;
     public bool isSolved = false;
+
 
     //public List<GameObject> objects = new List<GameObject>();
     [SerializeField]
@@ -18,29 +18,34 @@ public class SceneState : MonoBehaviour
 
     public GameObject scenePrefab;
 
+
+    public GameObject clockPrefab;
+    public Vector3 clockPosition;
+
     public int door1TravelId;
     public int door2TravelId;
 
     private PlayerController m_player;
 
 
-    private void Start()
-    {
-
+    private void Start() {
+        //init scene here
         m_player = FindObjectOfType<PlayerController>();
+        //instantiate different prefabs for every room, this means that we have to move the clock pointers to a certain location IN THE PREFAB OK
+        Instantiate(clockPrefab, clockPosition, Quaternion.identity);
 
 
+        //lets destroy the objects that we had in the last scene so those wont stay
+        if (objects.Count > 0) {
 
-        if(objects.Count > 0) {
-
-            foreach(Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa o in objects) {
+            foreach (Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa o in objects) {
                 Destroy(o.obj);
                 objects.Remove(o);
             }
 
         }
-        
-        foreach(Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa o in prefabObjects) {
+        //lets spawn some objects to the room to distinguish the rooms and add the puzzle elements
+        foreach (Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa o in prefabObjects) {
             GameObject a = Instantiate(o.obj, o.objPosition, Quaternion.identity);
             objects.Add(o);
         }
@@ -54,18 +59,19 @@ public class SceneState : MonoBehaviour
 
 
     public void FixedUpdate() {
-        
+
 
 
 
     }
+
 
     [System.Serializable]
     public class Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa : System.Object {
 
         public Vector3 objPosition;
         public GameObject obj;
-        public bool isPuzzleItem; //deprecate this like you deprecate yourself
+        //public bool isPuzzleItem; //deprecate this like you deprecate yourself
     }
 
 
