@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     private PlayerController m_pc;
 
+    public int currentScene;
+
     private void Awake()
     {
         GM = this;

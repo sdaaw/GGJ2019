@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class SceneState : MonoBehaviour
 {
-    //public List<GameObject> objects = new List<GameObject>();
+    //index?
+    public int sceneId;
+
+    //which character is playing
     public int cID;
     public bool isSolved = false;
 
+    //public List<GameObject> objects = new List<GameObject>();
+    public GameObject scenePrefab;
 
-    private void Start() {
-        
+
+    private void Start()
+    {
+
+        //clock state???
+
+        //animations
+
+        //player can play ->
+
+        //setup two different/same outputs
 
 
     }
