@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{157628EE-6CAD-8795-A604-80BFDAFB6274}</ProjectGuid>
+    <ProjectGuid>{B4D7F07A-EF8B-AD1E-B0AD-04C1FD69C764}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2018.3.2f1</UnityVersion>
   </PropertyGroup>
@@ -60,12 +60,183 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\SceneManager.cs" />
-    <Compile Include="Assets\Scripts\SceneState.cs" />
-    <None Include="Assets\InnerGlowShader.shader" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\AchievementStepTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\AchievementUnlockedTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\AdCompleteTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\AdOfferTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\AdSkipTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\AdStartTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\AnalyticsEventTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\ChatMessageSentTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\CutsceneSkipTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\CutsceneStartTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\FirstInteractionTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\GameOverTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\GameStartTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\IAPTransactionTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\ItemAcquiredTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\ItemSpentTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\LevelCompleteTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\LevelFailTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\LevelQuitTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\LevelSkipTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\LevelStartTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\LevelUpTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\PostAdActionTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\PushNotificationClickTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\PushNotificationEnableTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\ScreenVisitTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\SocialShareAcceptTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\SocialShareTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\StoreItemClickTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\StoreOpenedTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\TutorialCompleteTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\TutorialSkipTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\TutorialStartTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\TutorialStepTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.analytics@3.2.2\Tests\Editor\Unity.Analytics.StandardEvents\UserSignupTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\AssemblyInfo.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Bootstrap.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\CollabAnalytics.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\CollabHistoryWindow.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\CollabToolbarButton.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\CollabToolbarWindow.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Presenters\CollabHistoryPresenter.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\BuildStatusButton.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\CollabHistoryDropDown.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\CollabHistoryDropDownItem.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\CollabHistoryItem.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\CollabHistoryItemFactory.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\CollabHistoryRevisionLine.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\HistoryProgressSpinner.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\ICollabHistoryItemFactory.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\PagedListView.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Collab\Views\StatusView.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Tests\Editor\HistoryTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\AssemblyInfo.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\External\SemVersion.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\External\SemVersionExtension.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Common\ApplicationUtil.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Common\OperationSignal.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Common\Resources.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Common\ThreadedDelay.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Interfaces\IAddOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Interfaces\IBaseOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Interfaces\IListOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Interfaces\IOperationFactory.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Interfaces\IRemoveOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Interfaces\ISearchOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\OperationFactory.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\Package.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageAssetPostprocessor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageCollection.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageError.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageFilter.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageGroupOrigins.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageInfo.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageInfoListExtensions.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageJsonHelper.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageListExtensions.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageOrigin.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageSearchFilter.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageState.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Packages\PackageTag.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Upm\UpmAddOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Upm\UpmBaseOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Upm\UpmListOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Upm\UpmOperationFactory.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Upm\UpmRemoveOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\Services\Upm\UpmSearchOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\Common\Alert.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\Common\LoadingSpinner.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\Common\PopupField.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\Common\UIUtils.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\Common\VersionItem.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\Interfaces\IPackageManagerExtension.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageAddFromUrlField.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageDetails.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageFiltering.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageGroup.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageItem.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageList.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageManagerExtensions.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageManagerPrefs.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageManagerToolbar.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageManagerWindow.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageSearchToolbar.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Sources\UI\PackageStatusBar.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\AssemblyInfo.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Common\PackageSets.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Common\UITests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Mock\MockAddOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Mock\MockListOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Mock\MockOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Mock\MockRemoveOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Mock\MockSearchOperation.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\MockOperationFactory.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Packages\PackageBaseTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Packages\PackageCollectionTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Packages\PackageInfoTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Packages\PackageSearchTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\Services\Packages\PackageTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\UI\PackageDetailsTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Tests\Editor\UI\PackageManagerWindowTests.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\DropdownOptionListDrawer.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\EditorCoroutine.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\GlyphInfoDrawer.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\KerningPairDrawer.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\SpriteInfoDrawer.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TextAlignmentDrawer.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_BaseEditorPanel.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_BaseShaderGUI.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_BitmapShaderGUI.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_ColorGradientAssetMenu.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_ColorGradientEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_DropdownEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_EditorPanel.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_EditorUtility.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_FontAssetEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_InputFieldEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_MeshRendererEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_PackageUtilities.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_PostBuildProcessHandler.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_ProjectTextSettings.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_ResourcesLoader.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_SDFShaderGUI.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_SettingsEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_SpriteAssetEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_SpriteAssetImporter.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_SpriteAssetMenu.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_StyleAssetMenu.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_StyleSheetEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_SubMesh_Editor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_SubMeshUI_Editor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_UiEditorPanel.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMP_UIStyleManager.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMPro_ContextMenus.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMPro_CreateObjectMenu.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMPro_EditorShaderUtilities.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMPro_FontAssetCreatorWindow.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMPro_FontPlugin.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMPro_SortingLayerHelper.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMPro_TextContainerEditor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Scripts\Editor\TMPro_TexturePostProcessor.cs" />
+    <Compile Include="Assets\Scenes\Room\Library\PackageCache\com.unity.textmeshpro@1.3.0\Tests\Editor\TMP_EditorTests.cs" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageGroup.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Resources\Styles\CollabHistoryDark.uss" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageAddFromUrlField.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageStatusBar.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageManagerToolbar.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageDetails.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageList.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageItem.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\Alert.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageManagerWindow.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Templates\PackageSearchToolbar.uxml" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Styles\Main_Light.uss" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.package-manager-ui@2.0.3\Editor\Resources\Styles\Main_Dark.uss" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Resources\Styles\CollabHistoryLight.uss" />
+    <None Include="Assets\Scenes\Room\Library\PackageCache\com.unity.collab-proxy@1.2.15\Editor\Resources\Styles\CollabHistoryCommon.uss" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/projects/GGJ2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -168,6 +339,9 @@
     <Reference Include="UnityEngine.SharedInternalsModule">
       <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.SpatialTrackingModule">
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule">
       <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
     </Reference>
@@ -264,6 +438,12 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
@@ -273,14 +453,44 @@
     <Reference Include="UnityEngine.Timeline">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Timeline">
+      <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GoogleAudioSpatializer">
+      <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GoogleAudioSpatializer">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>D:/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>D:/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>D:/projects/GGJ2019/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>D:/projects/GGJ2019/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
@@ -290,6 +500,45 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/projects/GGJ2019/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>D:/projects/GGJ2019/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>D:/projects/GGJ2019/Assets/Scenes/Room/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -645,6 +894,12 @@
     <Reference Include="Boo.Lang">
       <HintPath>D:/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{157628EE-6CAD-8795-A604-80BFDAFB6274}</Project>
+      <Name>Assembly-CSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
