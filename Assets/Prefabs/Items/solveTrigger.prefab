@@ -157,7 +157,8 @@ MonoBehaviour:
   interactImg: {fileID: 0}
   moresprites:
   - {fileID: 21300000, guid: ca1974c0958097049ab8ba660e5fb500, type: 3}
-  - {fileID: 21300000, guid: 8636971342bcbcc468c6a7d1a570b019, type: 3}
+  - {fileID: 21300000, guid: 6375cbe8d0ca2ae4c8476e22f431d0ee, type: 3}
+  canBeInteractedWith: 0
   isGlowing: 0
   canBePickedUp: 0
   inspectingSolves: 1

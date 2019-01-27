@@ -146,6 +146,7 @@ public class SceneManager : MonoBehaviour
         currentRoom = Instantiate(selectedSS.gameObject, roomPosition, Quaternion.Euler(roomRotation));
 
         //change playermodel and place it to start position
+        yield return new WaitForSeconds(1);
 
         for (float i = 1f; i >= 0f; i -= 0.01f) {
             fadeImage.color = new Color(0, 0, 0, i);
