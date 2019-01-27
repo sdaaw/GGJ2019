@@ -21,7 +21,7 @@ public class BezierCubeBehaviour : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         myMaterial = GetComponent<Renderer>().material;
-        myMaterial.color = new Color(Random.Range(0.8f, 1f), 0, Random.Range(0.1f, 0.2f), 0.5f);
+        myMaterial.color = new Color(Random.Range(0.2f, 0.5f), 0, Random.Range(0.1f, 0.2f), 0.2f);
     }
 
     void FixedUpdate() {
