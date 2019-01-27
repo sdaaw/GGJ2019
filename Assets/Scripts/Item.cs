@@ -7,7 +7,7 @@ public class Item : MonoBehaviour {
     public int itemId;
     public Sprite interactImg;
     public List<Sprite> moresprites = new List<Sprite>();
-    private bool canBeInteractedWith = false;
+    public bool canBeInteractedWith = false;
 
     public bool isGlowing = false;
 
@@ -28,7 +28,8 @@ public class Item : MonoBehaviour {
         if (other.GetComponent<PlayerController>()) {
             isGlowing = true;
             Debug.Log("Interact with " + gameObject.transform.root.name);
-            canBeInteractedWith = true; 
+            canBeInteractedWith = true;
+            other.GetComponent<PlayerController>().nearObject = this;
         }
     }
     public void FixedUpdate() {
@@ -38,8 +39,8 @@ public class Item : MonoBehaviour {
             myMat.SetFloat("_RimPower", 0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && canBeInteractedWith)
-            InteractWithItem();
+        /*if (Input.GetKeyDown(KeyCode.E) && canBeInteractedWith)
+            InteractWithItem();*/
     }
 
     private void OnTriggerExit(Collider other) {

@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public Item currentItem;
     public bool canDepositItem;
 
+    public Item nearObject;
     //private bool pickingUpItem;
 
     public void SetCharacter(int id)
@@ -85,8 +86,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //TODO: Fix to work with E
-        if (Input.GetKeyDown(KeyCode.F) && hasItem)
+        if (Input.GetKeyDown(KeyCode.E) && hasItem)
             DropItem();
+        else if (Input.GetKeyDown(KeyCode.E) && nearObject != null && nearObject.canBeInteractedWith)
+            nearObject.InteractWithItem();
 
     }
 
