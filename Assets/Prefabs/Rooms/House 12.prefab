@@ -2596,3 +2596,4 @@ MonoBehaviour:
   moodImg: {fileID: 0}
   requiredItem: {fileID: 0}
   PlayInjuredAnimation: 1
+  weirdMusic: 1

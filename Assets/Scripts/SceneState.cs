@@ -39,10 +39,14 @@ public class SceneState : MonoBehaviour {
 
     public bool PlayInjuredAnimation;
 
+    public bool weirdMusic;
+
     private void Start() {
 
         if (sceneId == 22)
             Application.Quit();
+
+        FindObjectOfType<PlayerController>().SetMusic(weirdMusic);
 
         //init scene here
         m_player = FindObjectOfType<PlayerController>();

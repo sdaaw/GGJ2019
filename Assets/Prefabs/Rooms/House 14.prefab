@@ -93,6 +93,7 @@ MonoBehaviour:
   moodImg: {fileID: 0}
   requiredItem: {fileID: 0}
   PlayInjuredAnimation: 0
+  weirdMusic: 1
 --- !u!1 &2414960070015470392
 GameObject:
   m_ObjectHideFlags: 0

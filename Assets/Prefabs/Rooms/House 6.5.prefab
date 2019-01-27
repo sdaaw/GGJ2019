@@ -2598,3 +2598,5 @@ MonoBehaviour:
   moodImg: {fileID: 0}
   requiredItem: {fileID: 850479759639118432, guid: 7dcd27560927f5844a803b886471f427,
     type: 3}
+  PlayInjuredAnimation: 0
+  weirdMusic: 1

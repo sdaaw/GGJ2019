@@ -300,6 +300,7 @@ MonoBehaviour:
   requiredItem: {fileID: 2898172423246581093, guid: 3728aa66d0c8e574b827b9695b8e59f1,
     type: 3}
   PlayInjuredAnimation: 1
+  weirdMusic: 1
 --- !u!1 &9063512954713859961
 GameObject:
   m_ObjectHideFlags: 0

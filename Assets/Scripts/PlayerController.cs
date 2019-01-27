@@ -40,6 +40,20 @@ public class PlayerController : MonoBehaviour
     public Item nearObject;
     //private bool pickingUpItem;
 
+    public List<AudioClip> clips = new List<AudioClip>();
+    public AudioSource bgMusic;
+
+    public void SetMusic(bool wierdMusic)
+    {
+        if (!wierdMusic && bgMusic.clip != clips[0])
+            bgMusic.clip = clips[0];
+        else if(wierdMusic)
+            bgMusic.clip = clips[1];
+
+        if(!bgMusic.isPlaying)
+            bgMusic.Play();
+    }
+
     public void SetCharacter(int id)
     {
         for(int i = 0; i < players.Count; i++)
