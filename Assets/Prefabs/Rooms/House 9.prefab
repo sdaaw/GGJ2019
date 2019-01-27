@@ -87,6 +87,7 @@ MonoBehaviour:
   requiredItem: {fileID: 2898172423246581093, guid: 3728aa66d0c8e574b827b9695b8e59f1,
     type: 3}
   PlayInjuredAnimation: 0
+  weirdMusic: 0
 --- !u!1 &2589786288675915999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1830,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c228de5cc1c07748af00c4f4cb99b91, type: 2}
+  - {fileID: 2100000, guid: 6ae31603d6ff88e40a251fb2fef22bb6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

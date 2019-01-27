@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
-
+    public static bool hasSeenTitle = false;
     
     Assets.Pixelation.Scripts.Pixelation pixelboi;
     UnityStandardAssets.ImageEffects.ScreenSpaceAmbientOcclusion occlusion;
@@ -80,7 +80,13 @@ public class CameraController : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
+        if(!hasSeenTitle)
+        {
+            hasSeenTitle = true;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
+        }
+        else
+            UnityEngine.SceneManagement.SceneManager.LoadScene("room");
 
     }
 

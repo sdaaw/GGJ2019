@@ -2066,7 +2066,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c228de5cc1c07748af00c4f4cb99b91, type: 2}
+  - {fileID: 2100000, guid: 2c188993b39156d4ea7cf599ca4720e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2492,6 +2492,8 @@ MonoBehaviour:
   door2TravelId: 3
   moodImg: {fileID: 9006512347837638149, guid: 9835233e71eebe041a7a93b2436c846e, type: 3}
   requiredItem: {fileID: 0}
+  PlayInjuredAnimation: 0
+  weirdMusic: 0
 --- !u!1 &5337455280646599136
 GameObject:
   m_ObjectHideFlags: 0

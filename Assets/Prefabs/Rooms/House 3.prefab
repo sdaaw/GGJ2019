@@ -88,6 +88,7 @@ MonoBehaviour:
   moodImg: {fileID: 0}
   requiredItem: {fileID: 0}
   PlayInjuredAnimation: 0
+  weirdMusic: 0
 --- !u!1 &4089584824761400153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,7 +1908,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c228de5cc1c07748af00c4f4cb99b91, type: 2}
+  - {fileID: 2100000, guid: 8aa6d1e40b6afe9499fdc2597360ee64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2551,6 +2552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a80741e6d872ad42a442cd8dc5182c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneCamera: {fileID: 0}
   isOnPC: 0
 --- !u!1 &7273207107497789703
 GameObject:

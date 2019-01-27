@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour
 
     public void SetMusic(bool wierdMusic)
     {
+        if (bgMusic == null)
+            return;
+
         if (!wierdMusic && bgMusic.clip != clips[0])
             bgMusic.clip = clips[0];
         else if(wierdMusic)
@@ -172,17 +175,13 @@ public class PlayerController : MonoBehaviour
         {
             if(item.gameObject.transform.root.GetComponent<Rigidbody>())
                 Destroy(item.gameObject.transform.root.GetComponent<Rigidbody>());
+
             item.gameObject.transform.root.position = cRightHand.transform.position;
-
-            //TODO: Rotate object correctly
-
-
-            //item.gameObject.transform.rotation = Quaternion.Euler(0,0,0);
-            //item.gameObject.transform.root.GetComponent<Collider>().enabled = false;
-            //item.gameObject.transform.root.GetComponentInChildren<Collider>().enabled = false;
-            //pickingUpItem = true;
-            //TODO: rotate
             item.gameObject.transform.root.parent = cRightHand.transform;
+
+            //TODO: rotate
+            //item.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
             hasItem = true;
             currentItem = item;
         }

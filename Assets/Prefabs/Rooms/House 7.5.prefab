@@ -2666,8 +2666,8 @@ MonoBehaviour:
   scenePrefab: {fileID: 0}
   clockPrefab: {fileID: 0}
   clockPosition: {x: 0, y: 0, z: 0}
-  door1TravelId: 1
-  door2TravelId: 1
+  door1TravelId: 23
+  door2TravelId: 23
   moodImg: {fileID: 587323236044787183, guid: cb0d26755a7d388428c9d53bd9aec446, type: 3}
   requiredItem: {fileID: 0}
   PlayInjuredAnimation: 0

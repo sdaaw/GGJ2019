@@ -727,7 +727,7 @@ MonoBehaviour:
   - {fileID: 7576171424295097133, guid: 3cc426931c69d57479682c9f635e2e7d, type: 3}
   - {fileID: 3399569363024048983, guid: f46b20d17a8923d4d9b0cb070e5e70e6, type: 3}
   - {fileID: 7579114309465547122, guid: f75aee0297db6264b8277ca8b24fa840, type: 3}
-  - {fileID: 0}
+  - {fileID: 7553932799105093406, guid: ca3db018ab0216346bd0eeef4ffd3ecc, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -746,6 +746,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &697820879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2562623989015183551, guid: e2324a5e2f8f24d4180b6718baddece7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2002061714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &748516139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1088,11 @@ PrefabInstance:
       propertyPath: bgMusic
       value: 
       objectReference: {fileID: 57490848}
+    - target: {fileID: 5086103336665005127, guid: e2324a5e2f8f24d4180b6718baddece7,
+        type: 3}
+      propertyPath: m_rightHands.Array.data[0]
+      value: 
+      objectReference: {fileID: 697820879}
     - target: {fileID: 5086103336665005122, guid: e2324a5e2f8f24d4180b6718baddece7,
         type: 3}
       propertyPath: m_Constraints

@@ -46,6 +46,9 @@ public class SceneState : MonoBehaviour {
         if (sceneId == 22)
             Application.Quit();
 
+        if (sceneId == 23)
+            Application.LoadLevel("IntroScene");
+
         FindObjectOfType<PlayerController>().SetMusic(weirdMusic);
 
         //init scene here

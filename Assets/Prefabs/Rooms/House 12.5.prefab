@@ -81,8 +81,8 @@ MonoBehaviour:
   scenePrefab: {fileID: 0}
   clockPrefab: {fileID: 0}
   clockPosition: {x: 0, y: 0, z: 0}
-  door1TravelId: 1
-  door2TravelId: 1
+  door1TravelId: 23
+  door2TravelId: 23
   moodImg: {fileID: 587323236044787183, guid: cb0d26755a7d388428c9d53bd9aec446, type: 3}
   requiredItem: {fileID: 0}
   PlayInjuredAnimation: 0
@@ -512,7 +512,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19a25be943e913e4d9db70fb7f6123f4, type: 2}
+  - {fileID: 2100000, guid: 81253b10d8505a64ea06586854443648, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

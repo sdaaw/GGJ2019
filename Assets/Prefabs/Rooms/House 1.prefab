@@ -267,7 +267,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c228de5cc1c07748af00c4f4cb99b91, type: 2}
+  - {fileID: 2100000, guid: b2a4de8fbc582b64887ad44aaef6646b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2597,3 +2597,5 @@ MonoBehaviour:
   moodImg: {fileID: 9006512347837638149, guid: 9835233e71eebe041a7a93b2436c846e, type: 3}
   requiredItem: {fileID: 3164300070567125544, guid: bc40cb395a5b613448857657ec5ca941,
     type: 3}
+  PlayInjuredAnimation: 0
+  weirdMusic: 0
