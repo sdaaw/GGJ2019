@@ -322,12 +322,6 @@
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/Käyttäjä/Documents/GitHub/GGJ2019/GGJ2019/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
-    <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
-      <HintPath>Assets/Ps1/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityVS.VersionSpecific">
-      <HintPath>Assets/Ps1/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib">
       <HintPath>J:\Unity5\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
     </Reference>
