@@ -56,6 +56,6 @@ public class Room3PC : MonoBehaviour {
         }
 
         //sceneload
-        UnityEngine.SceneManagement.SceneManager.LoadScene("VIDEO"); //replace the scene!!!!!
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Outro");
     }
 }
