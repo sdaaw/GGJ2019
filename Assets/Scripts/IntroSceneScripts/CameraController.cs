@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
 {
 
 
-
+    
     Assets.Pixelation.Scripts.Pixelation pixelboi;
     UnityStandardAssets.ImageEffects.ScreenSpaceAmbientOcclusion occlusion;
     UnityStandardAssets.ImageEffects.Twirl twirl;
@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     public int moveAmount = 2;
     private Vector3 originalLocation = new Vector3();
 
-    public AudioClip whiteNoise;
+    public AudioSource whiteNoise;
 
     // Start is called before the first frame update
     void Start()
@@ -59,18 +59,24 @@ public class CameraController : MonoBehaviour
     IEnumerator FinishFade() {
 
         chunky.enabled = !chunky.enabled;
+        whiteNoise.Play();
         yield return new WaitForSeconds(0.5f);
         chunky.enabled = !chunky.enabled;
         yield return new WaitForSeconds(0.2f);
+        whiteNoise.Stop();
         chunky.enabled = !chunky.enabled;
+        whiteNoise.Play();
         yield return new WaitForSeconds(1f);
         chunky.enabled = !chunky.enabled;
         yield return new WaitForSeconds(0.2f);
+        whiteNoise.Stop();
         chunky.enabled = !chunky.enabled;
+        whiteNoise.Play();
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < 100; i++) {
             chunky.Color.r -= 0.1f;
             bgMusic.volume -= 0.01f;
+            whiteNoise.volume -= 0.01f;
             yield return new WaitForSeconds(0.1f);
         }
 
