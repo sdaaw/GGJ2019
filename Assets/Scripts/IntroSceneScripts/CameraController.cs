@@ -23,6 +23,8 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+
         StartCoroutine(FadeIn());
         chunky = GetComponent<Assets.Pixelation.Scripts.Chunky>();
         pixelboi = GetComponent<Assets.Pixelation.Scripts.Pixelation>();
