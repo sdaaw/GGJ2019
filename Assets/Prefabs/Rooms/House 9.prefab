@@ -70,13 +70,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterId: 3
+  heldItemOnEntry: {fileID: 2898172423246581093, guid: 3728aa66d0c8e574b827b9695b8e59f1,
+    type: 3}
   sceneId: 9
-  isSolved: 1
+  isSolved: 0
+  isSolved2: 0
+  solved2Id: 0
   prefabObjects: []
   objects: []
   scenePrefab: {fileID: 0}
+  clockPrefab: {fileID: 0}
+  clockPosition: {x: 0, y: 0, z: 0}
   door1TravelId: 10
   door2TravelId: 10
+  moodImg: {fileID: 0}
+  requiredItem: {fileID: 2898172423246581093, guid: 3728aa66d0c8e574b827b9695b8e59f1,
+    type: 3}
+  PlayInjuredAnimation: 0
 --- !u!1 &2589786288675915999
 GameObject:
   m_ObjectHideFlags: 0

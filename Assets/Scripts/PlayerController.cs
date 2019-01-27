@@ -29,10 +29,9 @@ public class PlayerController : MonoBehaviour
 
     public float turnSpeed;
 
-    private Animator animator;
+    public Animator animator;
 
-    [SerializeField]
-    private GameObject moodIcon;
+    public GameObject moodPosition;
 
     public bool hasItem;
     public Item currentItem;
@@ -79,8 +78,8 @@ public class PlayerController : MonoBehaviour
         } else {
             animator = players[3].GetComponent<Animator>();
         }
-        if (moodIcon != null)
-            moodIcon.transform.LookAt(m_playerCamera.transform);
+        if (moodPosition != null)
+            moodPosition.transform.LookAt(m_playerCamera.transform);
     }
 
     private void Update()
@@ -101,8 +100,6 @@ public class PlayerController : MonoBehaviour
             Transform f = cRightHand.transform.GetChild(0);
             f.parent = null;
             f.transform.gameObject.AddComponent<Rigidbody>();
-
-            
 
             //if in drop area -> put right position -> give flag
             if(canDepositItem)
@@ -137,17 +134,19 @@ public class PlayerController : MonoBehaviour
         m_rigidbody.velocity = m_moveVector * speed;
     }
 
-    public void DisplayMood(Sprite img)
+    public void DisplayMood(GameObject img)
     {
-        moodIcon.GetComponentInChildren<Image>().sprite = img;
-        StartCoroutine(ShowMood());
+        GameObject go = Instantiate(img, Vector3.zero, Quaternion.identity);
+        go.transform.parent = moodPosition.transform;
+        go.transform.position = moodPosition.transform.position;
+        //StartCoroutine(ShowMood());
     }
 
     private IEnumerator ShowMood()
     {
-        moodIcon.SetActive(true);
+        moodPosition.SetActive(true);
         yield return new WaitForSeconds(2);
-        moodIcon.SetActive(false);
+        moodPosition.SetActive(false);
     }
 
     public void PutItemToHand(Item item)
@@ -157,6 +156,11 @@ public class PlayerController : MonoBehaviour
             if(item.gameObject.transform.root.GetComponent<Rigidbody>())
                 Destroy(item.gameObject.transform.root.GetComponent<Rigidbody>());
             item.gameObject.transform.root.position = cRightHand.transform.position;
+
+            //TODO: Rotate object correctly
+
+
+            //item.gameObject.transform.rotation = Quaternion.Euler(0,0,0);
             //item.gameObject.transform.root.GetComponent<Collider>().enabled = false;
             //item.gameObject.transform.root.GetComponentInChildren<Collider>().enabled = false;
             //pickingUpItem = true;

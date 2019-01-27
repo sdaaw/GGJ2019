@@ -2371,13 +2371,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterId: 2
+  heldItemOnEntry: {fileID: 0}
   sceneId: 8
   isSolved: 1
+  isSolved2: 0
+  solved2Id: 0
   prefabObjects: []
   objects: []
   scenePrefab: {fileID: 0}
+  clockPrefab: {fileID: 0}
+  clockPosition: {x: 0, y: 0, z: 0}
   door1TravelId: 9
   door2TravelId: 9
+  moodImg: {fileID: 0}
+  requiredItem: {fileID: 0}
+  PlayInjuredAnimation: 1
 --- !u!1 &6467188155354910896
 GameObject:
   m_ObjectHideFlags: 0

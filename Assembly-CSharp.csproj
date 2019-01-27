@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\IntroANIM\SwitchScene.cs" />
     <Compile Include="Assets\Pixelation\Example\Scripts\ImageEffectBase.cs" />
     <Compile Include="Assets\Pixelation\Example\Scripts\Plane.cs" />
     <Compile Include="Assets\Pixelation\Example\Scripts\PointLight.cs" />
@@ -73,8 +74,12 @@
     <Compile Include="Assets\Scripts\DoorTrigger.cs" />
     <Compile Include="Assets\Scripts\DropArea.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\IntroSceneScripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayWalkSound.cs" />
+    <Compile Include="Assets\Scripts\Room3PC.cs" />
+    <Compile Include="Assets\Scripts\SavePerson.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\SceneState.cs" />
     <None Include="Assets\Pixelation\Readme.txt" />

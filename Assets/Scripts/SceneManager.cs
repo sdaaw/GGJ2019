@@ -45,11 +45,25 @@ public class SceneManager : MonoBehaviour
 
     public void SwitchScene(int doorId) {
 
-        if(currentRoom.GetComponent<SceneState>().requiredItem != null)
+        //check if there is multiple sovles and handle them
+        if (currentRoom.GetComponent<SceneState>().requiredItem != null)
         {
-            PlayerController pc = FindObjectOfType<PlayerController>();
-            if (pc.hasItem && pc.currentItem.itemId == currentRoom.GetComponent<SceneState>().requiredItem.GetComponentInChildren<Item>().itemId)
-                currentRoom.GetComponent<SceneState>().isSolved = true;
+            if (!currentRoom.GetComponent<SceneState>().isSolved)
+            {
+                PlayerController pc = FindObjectOfType<PlayerController>();
+                if (pc.hasItem && pc.currentItem.itemId == currentRoom.GetComponent<SceneState>().requiredItem.GetComponentInChildren<Item>().itemId)
+                    currentRoom.GetComponent<SceneState>().isSolved = true;
+            }
+            else
+            {
+                PlayerController pc = FindObjectOfType<PlayerController>();
+                if (pc.hasItem && pc.currentItem.itemId == currentRoom.GetComponent<SceneState>().requiredItem.GetComponentInChildren<Item>().itemId)
+                {
+                    currentRoom.GetComponent<SceneState>().isSolved2 = true;
+                    currentRoom.GetComponent<SceneState>().isSolved = false;
+                }
+
+            }
         }
 
         if(currentRoom.GetComponent<SceneState>().isSolved) {
@@ -60,7 +74,16 @@ public class SceneManager : MonoBehaviour
             //disable player
             //fade and load new scene
 
-            StartCoroutine(RoomTransition(doorId));
+            //specific check for winning condition
+            if(currentRoom.GetComponent<SceneState>().sceneId == 3 && GameManager.pekkaSaved && GameManager.mirvaSaved)
+            {
+                GameManager.joukoSaved = true;
+                currentRoom.GetComponent<SceneState>().isSolved2 = true;
+                currentRoom.GetComponent<SceneState>().isSolved = false;
+                StartCoroutine(RoomTransition(doorId));
+            }
+            else
+                StartCoroutine(RoomTransition(doorId));
 
         } else {
                 StartCoroutine(RoomTransition(0)); //or go to same sceneid
@@ -80,28 +103,40 @@ public class SceneManager : MonoBehaviour
 
     IEnumerator RoomTransition(int doorId) {
 
-        for(float i = 0; i < 1f; i += 0.01f) {
+        PlayerController pc = FindObjectOfType<PlayerController>();
+        pc.AllowMovement = false;
+
+        for (float i = 0; i < 1f; i += 0.01f) {
             fadeImage.color = new Color(0, 0, 0, i);
             yield return new WaitForSeconds(0.01f);
         }
 
+        
+
         //set new room here?
         Destroy(currentRoom);
 
-        if (doorId == 1)
+        if(currentRoom.GetComponent<SceneState>().isSolved && !currentRoom.GetComponent<SceneState>().isSolved2)
         {
-            selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
+            if (doorId == 1)
+            {
+                selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
+            }
+            else if (doorId == 2)
+            {
+                selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
+            }
         }
-        else if (doorId == 2)
+        else if(currentRoom.GetComponent<SceneState>().isSolved2)
         {
-            selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
+            selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().solved2Id);
         }
 
         GameObject[] items = GameObject.FindGameObjectsWithTag("Item");
         for (int i = 0; i < items.Length; i++)
             Destroy(items[i]);
 
-        PlayerController pc = FindObjectOfType<PlayerController>();
+       
         pc.SetCharacter(selectedSS.characterId);
         Vector3 doorPos = currentRoom.GetComponent<SceneState>().transform.GetChild(0).transform.position;
 
@@ -118,7 +153,7 @@ public class SceneManager : MonoBehaviour
         }
 
         //currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.identity);
-
+        pc.AllowMovement = true;
     }
 
 }

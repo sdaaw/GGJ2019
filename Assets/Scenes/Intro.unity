@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 658853286}
   - component: {fileID: 658853287}
   - component: {fileID: 658853288}
+  - component: {fileID: 658853289}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -243,8 +244,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b0405da844f9e7640b1ede687ae185ca, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 2.15
+  m_Volume: 0.214
+  m_Pitch: 2.12
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -327,6 +328,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &658853289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658853282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc70a1c37c12a1c43819d3cd8c433ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1551182386
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +483,7 @@ Transform:
   m_GameObject: {fileID: 1802977569}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 8.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 658853285}
   m_RootOrder: 0
