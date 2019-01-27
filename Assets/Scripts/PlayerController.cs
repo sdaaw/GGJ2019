@@ -73,8 +73,12 @@ public class PlayerController : MonoBehaviour
     {
         if (AllowMovement)
             DoMovement();
-        animator.SetFloat("speed", m_rigidbody.velocity.magnitude);
-        //Debug.Log(m_rigidbody.velocity.magnitude);
+        if(animator != null) {
+            animator.SetFloat("speed", m_rigidbody.velocity.magnitude);
+            //Debug.Log(m_rigidbody.velocity.magnitude);
+        } else {
+            animator = players[3].GetComponent<Animator>();
+        }
         if (moodIcon != null)
             moodIcon.transform.LookAt(m_playerCamera.transform);
     }
