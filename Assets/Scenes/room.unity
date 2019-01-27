@@ -494,6 +494,7 @@ MonoBehaviour:
   - {fileID: 6512037388433736278, guid: 0424326dd241874408e2a2b271ce2e38, type: 3}
   - {fileID: 3848413455239645828, guid: 80c55f8ef68436242876a0c8fcfb684f, type: 3}
   - {fileID: 246298849833334283, guid: f73a2e0688c5c8240a1e0e12ed12348b, type: 3}
+  - {fileID: 7905305096099016552, guid: 8c8debc0b86f82d459f7813e0d41723d, type: 3}
   currentRoom: {fileID: 0}
 --- !u!4 &572472028
 Transform:

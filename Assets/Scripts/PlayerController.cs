@@ -31,8 +31,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
-    [SerializeField]
-    private GameObject moodIcon;
+    public GameObject moodPosition;
 
     public bool hasItem;
     public Item currentItem;
@@ -79,8 +78,8 @@ public class PlayerController : MonoBehaviour
         } else {
             animator = players[3].GetComponent<Animator>();
         }
-        if (moodIcon != null)
-            moodIcon.transform.LookAt(m_playerCamera.transform);
+        if (moodPosition != null)
+            moodPosition.transform.LookAt(m_playerCamera.transform);
     }
 
     private void Update()
@@ -137,17 +136,19 @@ public class PlayerController : MonoBehaviour
         m_rigidbody.velocity = m_moveVector * speed;
     }
 
-    public void DisplayMood(Sprite img)
+    public void DisplayMood(GameObject img)
     {
-        moodIcon.GetComponentInChildren<Image>().sprite = img;
-        StartCoroutine(ShowMood());
+        GameObject go = Instantiate(img, Vector3.zero, Quaternion.identity);
+        go.transform.parent = moodPosition.transform;
+        go.transform.position = moodPosition.transform.position;
+        //StartCoroutine(ShowMood());
     }
 
     private IEnumerator ShowMood()
     {
-        moodIcon.SetActive(true);
+        moodPosition.SetActive(true);
         yield return new WaitForSeconds(2);
-        moodIcon.SetActive(false);
+        moodPosition.SetActive(false);
     }
 
     public void PutItemToHand(Item item)

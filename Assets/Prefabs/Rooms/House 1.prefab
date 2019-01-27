@@ -2592,6 +2592,6 @@ MonoBehaviour:
   clockPosition: {x: 0, y: 0, z: 0}
   door1TravelId: 2
   door2TravelId: 2
-  moodImg: {fileID: 21300000, guid: 2372da7a9b823e444be2d7120043a6f9, type: 3}
+  moodImg: {fileID: 9006512347837638149, guid: 9835233e71eebe041a7a93b2436c846e, type: 3}
   requiredItem: {fileID: 850479759639118432, guid: 7dcd27560927f5844a803b886471f427,
     type: 3}

@@ -45,11 +45,25 @@ public class SceneManager : MonoBehaviour
 
     public void SwitchScene(int doorId) {
 
-        if(currentRoom.GetComponent<SceneState>().requiredItem != null)
+        //check if there is multiple sovles and handle them
+        if (currentRoom.GetComponent<SceneState>().requiredItem != null)
         {
-            PlayerController pc = FindObjectOfType<PlayerController>();
-            if (pc.hasItem && pc.currentItem.itemId == currentRoom.GetComponent<SceneState>().requiredItem.GetComponentInChildren<Item>().itemId)
-                currentRoom.GetComponent<SceneState>().isSolved = true;
+            if (!currentRoom.GetComponent<SceneState>().isSolved)
+            {
+                PlayerController pc = FindObjectOfType<PlayerController>();
+                if (pc.hasItem && pc.currentItem.itemId == currentRoom.GetComponent<SceneState>().requiredItem.GetComponentInChildren<Item>().itemId)
+                    currentRoom.GetComponent<SceneState>().isSolved = true;
+            }
+            else
+            {
+                PlayerController pc = FindObjectOfType<PlayerController>();
+                if (pc.hasItem && pc.currentItem.itemId == currentRoom.GetComponent<SceneState>().requiredItem.GetComponentInChildren<Item>().itemId)
+                {
+                    currentRoom.GetComponent<SceneState>().isSolved2 = true;
+                    currentRoom.GetComponent<SceneState>().isSolved = false;
+                }
+
+            }
         }
 
         if(currentRoom.GetComponent<SceneState>().isSolved) {
@@ -88,13 +102,20 @@ public class SceneManager : MonoBehaviour
         //set new room here?
         Destroy(currentRoom);
 
-        if (doorId == 1)
+        if(currentRoom.GetComponent<SceneState>().isSolved && !currentRoom.GetComponent<SceneState>().isSolved2)
         {
-            selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
+            if (doorId == 1)
+            {
+                selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
+            }
+            else if (doorId == 2)
+            {
+                selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
+            }
         }
-        else if (doorId == 2)
+        else if(currentRoom.GetComponent<SceneState>().isSolved2)
         {
-            selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
+            selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().solved2Id);
         }
 
         GameObject[] items = GameObject.FindGameObjectsWithTag("Item");

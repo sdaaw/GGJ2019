@@ -13,10 +13,12 @@ public class SceneState : MonoBehaviour {
     //which character is playing
     public int sceneId;
     public bool isSolved = false;
+    public bool isSolved2 = false;
 
+    public int solved2Id;
 
-    //public List<GameObject> objects = new List<GameObject>();
-    [SerializeField]
+  //public List<GameObject> objects = new List<GameObject>();
+  [SerializeField]
     public List<Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa> prefabObjects = new List<Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa>();
     public List<Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa> objects = new List<Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa>();
 
@@ -31,9 +33,11 @@ public class SceneState : MonoBehaviour {
 
     private PlayerController m_player;
 
-    public Sprite moodImg;
+    public GameObject moodImg;
 
     public GameObject requiredItem;
+
+  
 
 
     private void Start() {
@@ -45,7 +49,14 @@ public class SceneState : MonoBehaviour {
         //instantiate different prefabs for every room, this means that we have to move the clock pointers to a certain location IN THE PREFAB OK
         //Instantiate(clockPrefab, clockPosition, Quaternion.identity);
 
-        if(moodImg != null)
+        if(m_player.moodPosition.transform.childCount > 0)
+        {
+            Transform f = m_player.moodPosition.transform.GetChild(0);
+            f.parent = null;
+            Destroy(f.gameObject);
+        }
+
+        if (moodImg != null)
         {
             m_player.DisplayMood(moodImg);
         }
@@ -68,10 +79,9 @@ public class SceneState : MonoBehaviour {
         }
         //lets spawn some objects to the room to distinguish the rooms and add the puzzle elements
         foreach (Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa o in prefabObjects) {
-            GameObject a = Instantiate(o.obj, o.objPosition, Quaternion.identity);
+            GameObject a = Instantiate(o.obj, o.objPosition, o.obj.transform.rotation);
             objects.Add(o);
         }
-
 
         //clock state???
         //animations

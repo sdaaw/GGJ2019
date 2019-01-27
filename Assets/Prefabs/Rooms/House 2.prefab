@@ -2488,7 +2488,8 @@ MonoBehaviour:
   clockPosition: {x: 0, y: 0, z: 0}
   door1TravelId: 3
   door2TravelId: 3
-  moodImg: {fileID: 0}
+  moodImg: {fileID: 9006512347837638149, guid: 9835233e71eebe041a7a93b2436c846e, type: 3}
+  requiredItem: {fileID: 0}
 --- !u!1 &5337455280646599136
 GameObject:
   m_ObjectHideFlags: 0
