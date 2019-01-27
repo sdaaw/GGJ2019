@@ -70,13 +70,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterId: 3
+  heldItemOnEntry: {fileID: 0}
   sceneId: 14
   isSolved: 1
-  prefabObjects: []
+  isSolved2: 0
+  solved2Id: 0
+  prefabObjects:
+  - objPosition: {x: 1, y: 21.05, z: 83}
+    obj: {fileID: 4784362552058818869, guid: 98e92a76f2ae3b242ae098524d1c5f85, type: 3}
+  - objPosition: {x: 2, y: 21.05, z: 83}
+    obj: {fileID: 3410728597770212074, guid: 9e3a27e942286d241a19bbe6d496283f, type: 3}
+  - objPosition: {x: 0, y: 21.05, z: 83}
+    obj: {fileID: 846504678975661068, guid: 7e5e13e408b569d4da6744a968432e75, type: 3}
+  - objPosition: {x: -1, y: 21.05, z: 83}
+    obj: {fileID: 7706593004977945517, guid: 45cdcfb0bed989a4295e861e43267de9, type: 3}
   objects: []
   scenePrefab: {fileID: 0}
-  door1TravelId: 15
-  door2TravelId: 15
+  clockPrefab: {fileID: 0}
+  clockPosition: {x: 0, y: 0, z: 0}
+  door1TravelId: 1
+  door2TravelId: 1
+  moodImg: {fileID: 0}
+  requiredItem: {fileID: 0}
+  PlayInjuredAnimation: 0
 --- !u!1 &2414960070015470392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01174dc8d6862f64aa2e688bb1ee6193, type: 2}
+  - {fileID: 2100000, guid: 4cdc03c6ac0223d4b810fcf918b75dcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

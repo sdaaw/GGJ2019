@@ -1698,7 +1698,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01174dc8d6862f64aa2e688bb1ee6193, type: 2}
+  - {fileID: 2100000, guid: 4cdc03c6ac0223d4b810fcf918b75dcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2167,7 +2167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c228de5cc1c07748af00c4f4cb99b91, type: 2}
+  - {fileID: 2100000, guid: 19a25be943e913e4d9db70fb7f6123f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2581,10 +2581,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterId: 1
+  heldItemOnEntry: {fileID: 0}
   sceneId: 12
   isSolved: 1
+  isSolved2: 0
+  solved2Id: 0
   prefabObjects: []
   objects: []
   scenePrefab: {fileID: 0}
-  door1TravelId: 13
-  door2TravelId: 11
+  clockPrefab: {fileID: 0}
+  clockPosition: {x: 0, y: 0, z: 0}
+  door1TravelId: 20
+  door2TravelId: 13
+  moodImg: {fileID: 0}
+  requiredItem: {fileID: 0}
+  PlayInjuredAnimation: 1

@@ -37,14 +37,22 @@ public class SceneState : MonoBehaviour {
 
     public GameObject requiredItem;
 
-  
-
+    public bool PlayInjuredAnimation;
 
     private void Start() {
+
+        if (sceneId == 22)
+            Application.Quit();
+
         //init scene here
         m_player = FindObjectOfType<PlayerController>();
         m_player.hasItem = false;
         m_player.currentItem = null;
+
+        if(PlayInjuredAnimation)
+        {
+            m_player.animator.SetBool("isInjured", true);
+        }
 
         //instantiate different prefabs for every room, this means that we have to move the clock pointers to a certain location IN THE PREFAB OK
         //Instantiate(clockPrefab, clockPosition, Quaternion.identity);

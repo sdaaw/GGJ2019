@@ -2374,9 +2374,9 @@ MonoBehaviour:
   heldItemOnEntry: {fileID: 0}
   sceneId: 5
   isSolved: 1
-  prefabObjects:
-  - objPosition: {x: 0, y: 20, z: 83}
-    obj: {fileID: 850479759639118432, guid: 7dcd27560927f5844a803b886471f427, type: 3}
+  isSolved2: 0
+  solved2Id: 0
+  prefabObjects: []
   objects: []
   scenePrefab: {fileID: 0}
   clockPrefab: {fileID: 0}

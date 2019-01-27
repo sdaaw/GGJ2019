@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Male2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 100176, guid: 9ced6ce3491e54b4aa533691a1764513, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 400176, guid: 9ced6ce3491e54b4aa533691a1764513, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.20713

@@ -2585,10 +2585,10 @@ MonoBehaviour:
   sceneId: 6
   isSolved: 1
   isSolved2: 0
-  solved2Id: 16
+  solved2Id: 18
   prefabObjects:
-  - objPosition: {x: 0, y: 20, z: 83}
-    obj: {fileID: 850479759639118432, guid: 7dcd27560927f5844a803b886471f427, type: 3}
+  - objPosition: {x: -4, y: 23.56, z: 83}
+    obj: {fileID: 4989573174580075057, guid: 1c4550c4fafd83d41b4d86cac6739706, type: 3}
   objects: []
   scenePrefab: {fileID: 0}
   clockPrefab: {fileID: 0}
@@ -2596,5 +2596,6 @@ MonoBehaviour:
   door1TravelId: 7
   door2TravelId: 7
   moodImg: {fileID: 0}
-  requiredItem: {fileID: 850479759639118432, guid: 7dcd27560927f5844a803b886471f427,
+  requiredItem: {fileID: 4989573174580075057, guid: 1c4550c4fafd83d41b4d86cac6739706,
     type: 3}
+  PlayInjuredAnimation: 0

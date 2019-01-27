@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour {
     public int itemId;
     public Sprite interactImg;
+    public List<Sprite> moresprites = new List<Sprite>();
     private bool canBeInteractedWith = false;
 
     public bool isGlowing = false;
@@ -15,6 +16,9 @@ public class Item : MonoBehaviour {
     [SerializeField]
     private bool canBePickedUp = false;
 
+    public bool inspectingSolves = false;
+
+    public bool triggersSecret = false;
 
     public void Start() {
         myMat = gameObject.transform.root.GetComponent<Renderer>().material;
@@ -58,6 +62,19 @@ public class Item : MonoBehaviour {
             //gameObject.transform.parent = 
             //Destroy(gameObject.transform.root.gameObject);
         } else {
+            if(inspectingSolves)
+                FindObjectOfType<SceneState>().isSolved = true;
+
+            if (triggersSecret)
+            {
+                GameManager.secretFlag = true;
+                interactImg = moresprites[0];
+            }
+            else
+            {
+                interactImg = moresprites[1];
+            }
+               
             GameManager.GM.ShowInteractImg(interactImg);
         }
     }

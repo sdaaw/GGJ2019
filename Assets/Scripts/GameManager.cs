@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
 
     public int currentScene;
 
+    public static bool secretFlag = false;
+
+    public static bool pekkaSaved = false;
+    public static bool mirvaSaved = false;
+    public static bool joukoSaved = false;
+
     private void Awake()
     {
         GM = this;
@@ -41,12 +47,19 @@ public class GameManager : MonoBehaviour
 
     public void ShowInteractImg(Sprite sp)
     {
+        //TODO: fix doesnt work
+        pickedUpImg.GetComponent<Image>().useSpriteMesh = true;
+        pickedUpImg.GetComponent<Image>().preserveAspect = true;
         pickedUpImg.GetComponent<Image>().sprite = sp;
 
         if (pickedUpImg.gameObject.activeSelf)
             pickedUpImg.gameObject.SetActive(false);
         else
+        {
             pickedUpImg.gameObject.SetActive(true);
+           
+        }
+            
         
     }
 }

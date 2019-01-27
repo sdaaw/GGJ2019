@@ -73,15 +73,18 @@ MonoBehaviour:
   heldItemOnEntry: {fileID: 0}
   sceneId: 4
   isSolved: 1
+  isSolved2: 0
+  solved2Id: 0
   prefabObjects: []
   objects: []
   scenePrefab: {fileID: 0}
   clockPrefab: {fileID: 0}
   clockPosition: {x: 0, y: 0, z: 0}
-  door1TravelId: 5
-  door2TravelId: 5
+  door1TravelId: 6
+  door2TravelId: 6
   moodImg: {fileID: 587323236044787183, guid: cb0d26755a7d388428c9d53bd9aec446, type: 3}
   requiredItem: {fileID: 0}
+  PlayInjuredAnimation: 0
 --- !u!1 &3890220599100483061
 GameObject:
   m_ObjectHideFlags: 0

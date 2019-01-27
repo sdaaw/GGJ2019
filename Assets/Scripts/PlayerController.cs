@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     public float turnSpeed;
 
-    private Animator animator;
+    public Animator animator;
 
     public GameObject moodPosition;
 
@@ -101,8 +101,6 @@ public class PlayerController : MonoBehaviour
             f.parent = null;
             f.transform.gameObject.AddComponent<Rigidbody>();
 
-            
-
             //if in drop area -> put right position -> give flag
             if(canDepositItem)
             {
@@ -158,6 +156,11 @@ public class PlayerController : MonoBehaviour
             if(item.gameObject.transform.root.GetComponent<Rigidbody>())
                 Destroy(item.gameObject.transform.root.GetComponent<Rigidbody>());
             item.gameObject.transform.root.position = cRightHand.transform.position;
+
+            //TODO: Rotate object correctly
+
+
+            //item.gameObject.transform.rotation = Quaternion.Euler(0,0,0);
             //item.gameObject.transform.root.GetComponent<Collider>().enabled = false;
             //item.gameObject.transform.root.GetComponentInChildren<Collider>().enabled = false;
             //pickingUpItem = true;

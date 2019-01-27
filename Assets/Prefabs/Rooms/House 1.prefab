@@ -2581,10 +2581,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterId: 0
-  heldItemOnEntry: {fileID: 850479759639118432, guid: 7dcd27560927f5844a803b886471f427,
+  heldItemOnEntry: {fileID: 3164300070567125544, guid: bc40cb395a5b613448857657ec5ca941,
     type: 3}
   sceneId: 1
   isSolved: 0
+  isSolved2: 0
+  solved2Id: 0
   prefabObjects: []
   objects: []
   scenePrefab: {fileID: 0}
@@ -2593,5 +2595,5 @@ MonoBehaviour:
   door1TravelId: 2
   door2TravelId: 2
   moodImg: {fileID: 9006512347837638149, guid: 9835233e71eebe041a7a93b2436c846e, type: 3}
-  requiredItem: {fileID: 850479759639118432, guid: 7dcd27560927f5844a803b886471f427,
+  requiredItem: {fileID: 3164300070567125544, guid: bc40cb395a5b613448857657ec5ca941,
     type: 3}

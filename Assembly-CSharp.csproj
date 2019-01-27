@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\IntroSceneScripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\SavePerson.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\SceneState.cs" />
     <None Include="Assets\Pixelation\Readme.txt" />

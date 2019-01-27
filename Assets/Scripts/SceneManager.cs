@@ -74,7 +74,16 @@ public class SceneManager : MonoBehaviour
             //disable player
             //fade and load new scene
 
-            StartCoroutine(RoomTransition(doorId));
+            //specific check for winning condition
+            if(currentRoom.GetComponent<SceneState>().sceneId == 3 && GameManager.pekkaSaved && GameManager.mirvaSaved)
+            {
+                GameManager.joukoSaved = true;
+                currentRoom.GetComponent<SceneState>().isSolved2 = true;
+                currentRoom.GetComponent<SceneState>().isSolved = false;
+                StartCoroutine(RoomTransition(doorId));
+            }
+            else
+                StartCoroutine(RoomTransition(doorId));
 
         } else {
                 StartCoroutine(RoomTransition(0)); //or go to same sceneid
@@ -94,10 +103,15 @@ public class SceneManager : MonoBehaviour
 
     IEnumerator RoomTransition(int doorId) {
 
-        for(float i = 0; i < 1f; i += 0.01f) {
+        PlayerController pc = FindObjectOfType<PlayerController>();
+        pc.AllowMovement = false;
+
+        for (float i = 0; i < 1f; i += 0.01f) {
             fadeImage.color = new Color(0, 0, 0, i);
             yield return new WaitForSeconds(0.01f);
         }
+
+        
 
         //set new room here?
         Destroy(currentRoom);
@@ -122,7 +136,7 @@ public class SceneManager : MonoBehaviour
         for (int i = 0; i < items.Length; i++)
             Destroy(items[i]);
 
-        PlayerController pc = FindObjectOfType<PlayerController>();
+       
         pc.SetCharacter(selectedSS.characterId);
         Vector3 doorPos = currentRoom.GetComponent<SceneState>().transform.GetChild(0).transform.position;
 
@@ -139,7 +153,7 @@ public class SceneManager : MonoBehaviour
         }
 
         //currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.identity);
-
+        pc.AllowMovement = true;
     }
 
 }
