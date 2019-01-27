@@ -6,7 +6,7 @@ public class SceneState : MonoBehaviour {
     //index?
     public int characterId;
 
-    public Item heldItemOnEntry;
+    public GameObject heldItemOnEntry;
 
     private GameObject helditemInScene;
 
@@ -33,10 +33,15 @@ public class SceneState : MonoBehaviour {
 
     public Sprite moodImg;
 
+    public GameObject requiredItem;
+
 
     private void Start() {
         //init scene here
         m_player = FindObjectOfType<PlayerController>();
+        m_player.hasItem = false;
+        m_player.currentItem = null;
+
         //instantiate different prefabs for every room, this means that we have to move the clock pointers to a certain location IN THE PREFAB OK
         //Instantiate(clockPrefab, clockPosition, Quaternion.identity);
 
@@ -49,7 +54,7 @@ public class SceneState : MonoBehaviour {
         if(heldItemOnEntry != null)
         {
             helditemInScene = Instantiate(heldItemOnEntry.gameObject, Vector3.zero, Quaternion.identity);
-            m_player.PutItemToHand(helditemInScene.GetComponent<Item>());
+            m_player.PutItemToHand(helditemInScene.GetComponentInChildren<Item>());
         }
 
         //lets destroy the objects that we had in the last scene so those wont stay

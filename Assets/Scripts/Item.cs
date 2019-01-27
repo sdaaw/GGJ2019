@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Item : MonoBehaviour {
+    public int itemId;
     public Sprite interactImg;
     private bool canBeInteractedWith = false;
 
@@ -16,7 +17,7 @@ public class Item : MonoBehaviour {
 
 
     public void Start() {
-        myMat = gameObject.transform.GetChild(0).GetComponent<Renderer>().material;
+        myMat = gameObject.transform.root.GetComponent<Renderer>().material;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -33,7 +34,7 @@ public class Item : MonoBehaviour {
             myMat.SetFloat("_RimPower", 0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canBeInteractedWith)
             InteractWithItem();
     }
 
@@ -51,7 +52,7 @@ public class Item : MonoBehaviour {
     }
 
     public void InteractWithItem() {
-        if (canBePickedUp && !FindObjectOfType<PlayerController>()) {
+        if (canBePickedUp) {
             GameManager.GM.ShowPickupImg(interactImg);
             FindObjectOfType<PlayerController>().PutItemToHand(this);
             //gameObject.transform.parent = 

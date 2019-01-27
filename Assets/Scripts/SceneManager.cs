@@ -12,7 +12,7 @@ public class SceneManager : MonoBehaviour
     public Vector3 roomPosition = new Vector3(0, 0, 0);
     public Vector3 roomRotation = new Vector3(0, 0, 0);
 
-    private SceneState currentSceneState;
+    private SceneState selectedSS;
 
     public GameObject sceneCamera;
 
@@ -25,10 +25,10 @@ public class SceneManager : MonoBehaviour
 
 
     public void Start() {
-        currentSceneState = roomList[0];
-        currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.Euler(roomRotation));
+        selectedSS = roomList[0];
+        currentRoom = Instantiate(selectedSS.gameObject, roomPosition, Quaternion.Euler(roomRotation));
         PlayerController pc = FindObjectOfType<PlayerController>();
-        pc.SetCharacter(currentSceneState.characterId);
+        pc.SetCharacter(selectedSS.characterId);
         Vector3 doorPos = currentRoom.GetComponent<SceneState>().transform.GetChild(0).transform.position;
         pc.transform.position = new Vector3(doorPos.x + 0.5f, pc.transform.position.y, doorPos.z - 2);
         pc.transform.LookAt(sceneCamera.transform);
@@ -45,8 +45,14 @@ public class SceneManager : MonoBehaviour
 
     public void SwitchScene(int doorId) {
 
+        if(currentRoom.GetComponent<SceneState>().requiredItem != null)
+        {
+            PlayerController pc = FindObjectOfType<PlayerController>();
+            if (pc.hasItem && pc.currentItem.itemId == currentRoom.GetComponent<SceneState>().requiredItem.GetComponentInChildren<Item>().itemId)
+                currentRoom.GetComponent<SceneState>().isSolved = true;
+        }
 
-        if(currentSceneState.isSolved) {
+        if(currentRoom.GetComponent<SceneState>().isSolved) {
 
             //currentSceneState = nextRoom.GetComponent<SceneState>();
 
@@ -57,15 +63,10 @@ public class SceneManager : MonoBehaviour
             StartCoroutine(RoomTransition(doorId));
 
         } else {
-
-            if(currentSceneState.sceneId != 0) {
-                StartCoroutine(RoomTransition(currentSceneState.sceneId - 1)); //or go to same sceneid
+                StartCoroutine(RoomTransition(0)); //or go to same sceneid
             
                 Debug.Log("SWITCHED UNSOLVED SCENE");
             }
-
-        }
-
 
     }
 
@@ -77,7 +78,7 @@ public class SceneManager : MonoBehaviour
         return null;
     }
 
-    IEnumerator RoomTransition(int id) {
+    IEnumerator RoomTransition(int doorId) {
 
         for(float i = 0; i < 1f; i += 0.01f) {
             fadeImage.color = new Color(0, 0, 0, i);
@@ -87,23 +88,27 @@ public class SceneManager : MonoBehaviour
         //set new room here?
         Destroy(currentRoom);
 
-        if (id == 1)
+        if (doorId == 1)
         {
-            currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
+            selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door1TravelId);
         }
-        else if (id == 2)
+        else if (doorId == 2)
         {
-            currentSceneState = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
+            selectedSS = getStateWithId(currentRoom.GetComponent<SceneState>().door2TravelId);
         }
 
+        GameObject[] items = GameObject.FindGameObjectsWithTag("Item");
+        for (int i = 0; i < items.Length; i++)
+            Destroy(items[i]);
+
         PlayerController pc = FindObjectOfType<PlayerController>();
-        pc.SetCharacter(currentSceneState.characterId);
+        pc.SetCharacter(selectedSS.characterId);
         Vector3 doorPos = currentRoom.GetComponent<SceneState>().transform.GetChild(0).transform.position;
 
         pc.transform.position = new Vector3(doorPos.x + 0.5f, pc.transform.position.y, doorPos.z - 2);
         pc.transform.LookAt(sceneCamera.transform);
 
-        currentRoom = Instantiate(currentSceneState.gameObject, roomPosition, Quaternion.Euler(roomRotation));
+        currentRoom = Instantiate(selectedSS.gameObject, roomPosition, Quaternion.Euler(roomRotation));
 
         //change playermodel and place it to start position
 

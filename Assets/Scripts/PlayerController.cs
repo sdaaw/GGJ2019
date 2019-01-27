@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
 
     public bool hasItem;
     public Item currentItem;
+    public bool canDepositItem;
+
+    //private bool pickingUpItem;
 
     public void SetCharacter(int id)
     {
@@ -43,7 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             if (i == id)
             {
-                if (cRightHand != null && cRightHand.transform.GetChild(0))
+                if (cRightHand != null && cRightHand.transform.childCount > 0)
                 {
                     Transform f = cRightHand.transform.GetChild(0);
                     f.parent = null;
@@ -75,6 +78,40 @@ public class PlayerController : MonoBehaviour
         if (moodIcon != null)
             moodIcon.transform.LookAt(m_playerCamera.transform);
     }
+
+    private void Update()
+    {
+        //TODO: Fix to work with E
+        if (Input.GetKeyDown(KeyCode.F) && hasItem)
+            DropItem();
+
+    }
+
+    private void DropItem()
+    {
+        if (cRightHand != null && cRightHand.transform.childCount > 0)
+        {
+            hasItem = false;
+            currentItem = null;
+
+            Transform f = cRightHand.transform.GetChild(0);
+            f.parent = null;
+            f.transform.gameObject.AddComponent<Rigidbody>();
+
+            
+
+            //if in drop area -> put right position -> give flag
+            if(canDepositItem)
+            {
+                FindObjectOfType<SceneState>().isSolved = true;
+                //TODO: Do this better and set rotation
+                f.transform.position = FindObjectOfType<DropArea>().dropArea;
+                Destroy(f.GetComponent<Rigidbody>());
+            }
+           
+        }
+    }
+
     /// <summary>
     /// Do player movement
     /// </summary>
@@ -113,8 +150,12 @@ public class PlayerController : MonoBehaviour
     {
         if(!hasItem)
         {
-            Destroy(item.gameObject.transform.root.GetComponentInChildren<Rigidbody>());
+            if(item.gameObject.transform.root.GetComponent<Rigidbody>())
+                Destroy(item.gameObject.transform.root.GetComponent<Rigidbody>());
             item.gameObject.transform.root.position = cRightHand.transform.position;
+            //item.gameObject.transform.root.GetComponent<Collider>().enabled = false;
+            //item.gameObject.transform.root.GetComponentInChildren<Collider>().enabled = false;
+            //pickingUpItem = true;
             //TODO: rotate
             item.gameObject.transform.root.parent = cRightHand.transform;
             hasItem = true;

@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\BezierCubeBehaviour.cs" />
     <Compile Include="Assets\Scripts\BezierSpawner.cs" />
     <Compile Include="Assets\Scripts\DoorTrigger.cs" />
+    <Compile Include="Assets\Scripts\DropArea.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
